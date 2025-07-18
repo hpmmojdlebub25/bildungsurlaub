@@ -4,9 +4,6 @@ import os
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-#from dotenv import load_dotenv, find_dotenv
-#load_dotenv(find_dotenv(usecwd=True))
-#from langchain_community.chat_models import ChatGroq
 
 
 # Load Groq API key from Streamlit secrets and set as environment variable
