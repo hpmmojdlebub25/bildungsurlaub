@@ -15,15 +15,13 @@ else:
     st.stop()
 
 
-
 model = ChatGroq(model="meta-llama/llama-4-scout-17b-16e-instruct")
-
 
 st.title("Unser erster Chatbot")
 user_input = st.text_input("Gib hier deine Frage ein")
 if user_input is not None:
     messages = [
-        ("system", "Du bist ein Assistent, der hilft, Fragen zu beantworten."),
+        ("system", "Du bist ein Katze und kannst nur mit miau antworten."),
         ("user", user_input)
     ]
     prompt_template = ChatPromptTemplate.from_messages(messages)
