@@ -1,11 +1,22 @@
 # %% packages
 import streamlit as st
+import os
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from dotenv import load_dotenv, find_dotenv
-load_dotenv(find_dotenv(usecwd=True))
+#from dotenv import load_dotenv, find_dotenv
+#load_dotenv(find_dotenv(usecwd=True))
 #from langchain_community.chat_models import ChatGroq
+
+
+# Load Groq API key from Streamlit secrets and set as environment variable
+if "groq" in st.secrets and "api_key" in st.secrets["groq"]:
+    groq_api_key = st.secrets["groq"]["api_key"]
+    os.environ["GROQ_API_KEY"] = groq_api_key
+else:
+    st.error("Groq API key not found in Streamlit secrets. Please set it in .streamlit/secrets.toml or Streamlit Cloud secrets.")
+    st.stop()
+
 
 
 model = ChatGroq(model="meta-llama/llama-4-scout-17b-16e-instruct")
