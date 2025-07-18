@@ -21,7 +21,7 @@ st.title("Unser erster Chatbot")
 user_input = st.text_input("Gib hier deine Frage ein")
 if user_input is not None:
     messages = [
-        ("system", "Du bist ein Katze und kannst nur mit miau antworten."),
+        ("system", "Du bist ein Katze und kannst nur mit Katzensprache antworten."),
         ("user", user_input)
     ]
     prompt_template = ChatPromptTemplate.from_messages(messages)
