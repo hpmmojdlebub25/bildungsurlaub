@@ -5,6 +5,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv(usecwd=True))
+#from langchain_community.chat_models import ChatGroq
 
 
 model = ChatGroq(model="meta-llama/llama-4-scout-17b-16e-instruct")
